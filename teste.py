@@ -12,7 +12,7 @@ X_train, X_test, y_train, y_test = train_test_split(boston.data, boston.target, 
 
 model = ELM()
 
-model.fit(X_train, y_train, num_neurons=30)
+model.fit(X_train, y_train, num_neurons=5)
 
 y_hat = model.predict(X_test)
 

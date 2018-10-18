@@ -15,7 +15,7 @@ class ELM(BaseEstimator, RegressorMixin):
 
         self.m_weights = np.random.randn(x_train.shape[1],num_neurons)
 
-        u = x_train @ np.asmatrix(self.m_weights)
+        u = np.matmul(np.asmatrix(x_train), np.asmatrix(self.m_weights))
 
         H = 1./(1 + np.exp(-u))
 
@@ -26,8 +26,8 @@ class ELM(BaseEstimator, RegressorMixin):
     def predict(self, x_test):
         x_test = np.c_[-1*np.ones(x_test.shape[0]), x_test]
 
-        u = x_test @ np.asmatrix(self.m_weights)
+        u = np.matmul(np.asmatrix(x_test),np.asmatrix(self.m_weights))
 
         H = 1./(1 + np.exp(-u))
 
-        return H @ np.asmatrix(self.w_weights)
+        return np.matmul(np.asmatrix(H), np.asmatrix(self.w_weights))
