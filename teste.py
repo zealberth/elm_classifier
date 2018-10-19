@@ -10,6 +10,7 @@ boston = load_boston()
 
 X_train, X_test, y_train, y_test = train_test_split(boston.data, boston.target, test_size=0.2)
 
+
 model = ELM()
 
 model.fit(X_train, y_train, num_neurons=5)
