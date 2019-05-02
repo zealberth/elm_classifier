@@ -14,7 +14,7 @@ class ELM(BaseEstimator, RegressorMixin):
     def fit(self, x_train, y_train):
         x_train = np.c_[-1*np.ones(x_train.shape[0]), x_train]
 
-        self.m_weights = np.random.randn(x_train.shape[1],num_neurons)
+        self.m_weights = np.random.randn(x_train.shape[1],self.num_neurons)
 
         u = np.asmatrix(x_train) @ np.asmatrix(self.m_weights)
 
