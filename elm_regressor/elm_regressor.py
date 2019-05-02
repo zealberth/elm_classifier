@@ -36,3 +36,8 @@ class ELM(BaseEstimator, RegressorMixin):
         H = np.c_[-1*np.ones(H.shape[0]), H]
 
         return np.asmatrix(H) @ np.asmatrix(self.w_weights)
+
+    def score(self, X, y, sample_weight=None):
+        from scipy.stats import pearsonr
+        p, _ = pearsonr(y, self.predict(X))
+        return p ** 2
