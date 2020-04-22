@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 from elm_regressor import ELM
 

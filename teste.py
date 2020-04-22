@@ -1,4 +1,3 @@
-import numpy as np
 from elm_regressor import ELM
 
 from sklearn.datasets import load_boston

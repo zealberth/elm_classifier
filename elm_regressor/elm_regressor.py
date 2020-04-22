@@ -1,6 +1,5 @@
 """Extreme Learning Machine Regression."""
 import numpy as np
-import sklearn
 from scipy.special import expit
 from sklearn.base import BaseEstimator, RegressorMixin
 
